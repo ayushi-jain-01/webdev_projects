@@ -1,3 +1,4 @@
+const BASE_URL = window.location.origin;
 let editingIndex = null;
 
 const dropdownBtnNotes = document.querySelector(".dropdown-btn-notes");

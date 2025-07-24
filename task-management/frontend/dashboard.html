@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TickIt Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="content">
+    <button id="toggleSidebarBtn"> ☰ </button>
+    <h1 id="main-heading"> Welcome to TickIt </h1>
+    <h3 id="second-heading"> Plan. Prioritize. Progress </h3>
+  </header>
+
+  <!-- Container with Sidebar + Main -->
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <button onclick="showSection('dashboard')">Home </button>
+      <button onclick="showSection('createTask')" id="create"> Create Task </button>
+      <button onclick="showSection('viewTasks')"> View Tasks </button>
+
+      <div class="dropdown-notes">
+        <button class="dropdown-btn-notes"> Notes ▾</button>
+        <div class="dropdown-content-notes">
+          <button onclick="showSection('createNote')"> Create New </button>
+          <button onclick="handleViewNotes()">View Saved</button>
+
+        </div>
+      </div>
+
+      <button id="logoutBtn"> Logout </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content" id="mainContent">
+
+      <!-- dashboard -->
+      <section id="dashboard" class="section">
+
+        <div class="d-heading">
+          Dashboard
+        </div>
+
+        <div class="dashboard-boxes">
+          <div class="box" id="taskSummary"></div>
+          <div class="box" id="noteSummary"></div>
+          <div class="box" id="upcomingTasks"></div>
+        </div>
+      </section>
+
+      <!-- Create Task Section -->
+      <section id="createTask" class="section hidden">
+        <h2 id="add-heading"> + Add Task </h2>
+        <div class="form-container">
+          <form id="taskForm">
+            <input type="text" id="title" placeholder="Title" required><br>
+            <textarea id="description" placeholder="Description"></textarea><br>
+            <div class="task-controls">
+              <select id="status"> 
+                <option value="pending">Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+              </select>
+              <input type="date" id="dueDate">
+              <center> <button type="submit" id="createTaskBtn"> <i class="fas fa-plus"> </i> </button> </center>
+            </div>
+          </form>
+        </div>  
+      </section>
+
+      <!-- View Tasks Section -->
+      <section id="viewTasks" class="section hidden">
+        <h2 id="tasks-heading"> Your Tasks</h2>
+
+        <div class="task-filter-navbar">
+          <div class="filter-options">
+            <button class="filter-btn active" data-status="all"> All Tasks </button>
+            <button class="filter-btn" data-status="completed"> Completed </button>
+            <button class="filter-btn" data-status="in-progress"> In-Progress </button>
+            <button class="filter-btn" data-status="pending"> Pending </button>
+          </div>
+        </div>
+      
+      <div class="sort-search">
+        <div class="sort-options">
+          <label id="sort-heading"> Sort By: </strong></label>
+          <select id="sortBy">
+            <option value="latest" class="options">Latest</option>
+            <option value="dueDateAsc" class="options">Due Date ↑</option>
+            <option value="dueDateDesc" class="options">Due Date ↓</option>
+          </select>
+        </div>
+
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search tasks..." />
+          </div>
+      </div>
+        <div id="taskList" class="task-grid"> </div>
+      </section>      
+
+      <!-- create notes -->
+      <section id="createNote" class="section" style="display: none;">
+        <h2 id="add-note"> Add Note </h2>
+        <div class="note-container">
+          <form id="noteForm">
+            <input type="text" id="noteTitle" placeholder=" Title" required><br>
+            <textarea id="noteContent" placeholder="Content" required></textarea><br>
+            <div class="note-wrapper">
+              <button type="submit" id="noteTaskBtn"> <i class="fas fa-plus"> </i> </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- view notes -->
+      <section id="viewNotes" class="section" style="display:none;">
+        <h2 id="save-name"> Saved Notes </h2>
+        <div id="savedNotesContainer" class="note-grid"> </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="footer">
+    <p> &#169; 2025 TickIt. All rights reserved. </p>
+  </div>
+
+  <script src="dashboard.js"></script>
+
+</body>
+</html>

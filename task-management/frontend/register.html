@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <ul>
+                <li> <a href="inex.html#"> Home </a> </li>
+                <li> <a href="index.html#about"> About </a> </li>
+                <li> <a href="index.html#contact"> Contact </a> </li>
+                <li> <a href="#" class="dropbtn"> Account </a> 
+                    <div class="dropdown-content">
+                        <a href="login.html"> Login </a>
+                        <a href="register.html"> Register </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="form-container" id="registerForm">
+
+        <div class="form-details">
+            <h2 id="reg">Register</h2>
+        </div>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Enter Username" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <input type="password" id ="password" name="password" placeholder="Enter Password" required>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <div class="footer">
+        <p> &#169; 2025 TickIt. All rights reserved. </p>
+    </div>    
+    <script src="script.js" defer></script>
+
+</body>
+</html>

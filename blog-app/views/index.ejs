@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Blogs</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <a href="/new">Create new Blog</a>
+
+    <% blogs.forEach(blog => { %>
+    <hr>
+    <div>
+        <h2><%= blog.title %></h2>
+
+        <% if (blog.content && blog.content.length > 0) { %>
+        <p><%= blog.content.length > 100 ? blog.content.substring(0, 100) + "..." : blog.content %></p>
+        <% } else { %>
+        <p>No content</p>
+        <% } %>
+
+        <a href="/blogs/<%= blog._id %>">Read More</a>
+    </div>
+    <% }) %>    
+</body>
+</html>

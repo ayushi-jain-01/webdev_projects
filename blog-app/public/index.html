@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WriteIt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    
+</head>
+<body>
+
+    <!-- navbar header  -->
+    <nav class="navbar">
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+
+        <ul class="nav-menu">
+            <li> <a href="#"> Home </a></li>
+            <li><a href="#" onclick="openModal('aboutModal')"> About</a></li>
+            <li><a href="#" onClick="openModal('contactModal')"> Contact</a></li>
+        </ul>
+
+        <button id="authToggleBtn" onclick="toggleAuthForm()"> Login </button>
+
+    </nav>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+        <h2><center> About Us</center></h2>
+        <p> Welcome to WriteIt — a space where ideas come to life through thoughtful writing and authentic voices. We believe that everyone has a story worth sharing, and our mission is to empower writers and readers alike to connect, inspire, and learn from one another.Whether you're here to read insightful articles, share your own experiences, or explore new perspectives, you'll find a community that values creativity, curiosity, and growth.Join us on this journey to discover your voice and make your mark.
+        Happy reading and writing!</p>
+    </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('contactModal')">&times;</span>
+        <h2>Contact Us</h2>
+        <p>Email: writeit@gmail.com</p>
+        <p>Phone: +123 456 7890</p>
+    </div>
+    </div>
+
+    <!-- auth section -->
+    <div class="auth-sidebar hidden"> 
+        <!-- LOGIN FORM -->
+        <div id="loginForm" class="auth-box hidden">
+            <h2><center> Login</center></h2>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button class="clicklr" onclick="login()">Login</button>
+            <p>
+                Don't have an account? 
+                <button class="link-btn" onclick="showRegister()"> Register 
+                </button>
+            </p>
+        </div>
+        
+        <!-- REGISTER FORM -->
+        <div id="registerForm" class="auth-box hidden">
+            <h2><center> Register </center></h2>
+            <input type="text" id="registerName" placeholder="Username" required />
+            <input type="email" id="registerEmail" placeholder="Email" required />
+            <input type="password" id="registerPassword" placeholder="Password" required />
+            <button class="clicklr" onclick="register()">Register</button>
+            <p> Already have an account?
+                <button class="link-btn" onclick="showLogin()"> Login </button>
+            </p>
+        </div>
+    </div>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1> WriteIt </h1>
+            <p> "Your Words. Your Voice. Your Story" </p>
+        </div>
+    </section>
+
+
+    <!-- CREATE BLOG BUTTON -->
+    <div style="text-align:center; margin-top: 30px;">
+    <button onclick="showCreateForm()" class="create_blog"> + NEW POST</button>
+    </div>
+
+    <!-- CREATE FORM -->
+    <div id="createForm" class="hidden" style="text-align:center; margin: 20px;">
+    <input type="text" id="newTitle" placeholder="Blog Title"><br><br>
+    <textarea id="newContent" placeholder="Blog Content"></textarea><br><br>
+    <input type="text" id="newAuthor" placeholder="Author"><br><br>
+    <button class="blogbutton" onclick="addBlog()">Submit</button>
+    <button class="blogbutton" onclick="hideCreateForm()">Cancel</button>
+    </div>
+
+    <!-- BLOG LIST -->
+    <div id="blogsWrapper" class="blog-container"></div>
+
+    <button onclick="showCard()"> </button>
+    <div id=" card-container "> </div>
+
+    <!-- footer  -->
+    <footer class="footer">
+            &copy; 2025 WriteIt. All rights reserved.
+        </div>
+    </footer>
+    
+    <!-- Blog View Modal -->
+    <div id="blogModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeBlogModal()">&times;</span>
+        <div id="modalCardContent">
+        <!-- Blog content will be inserted here -->
+        </div>
+    </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

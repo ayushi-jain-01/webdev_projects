@@ -1,6 +1,3 @@
-const BASE_URL = "https://task-management-backend-ayushi.onrender.com";
-console.log("Using BASE_URL:", BASE_URL);
-
 document.addEventListener("DOMContentLoaded", () => {
   const pathname = window.location.pathname;
 
@@ -31,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
 
       try {
-        const res = await fetch(`${BASE_URL}/api/auth/register`, {
+        const res = await fetch("http://localhost:3000/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email, password }),
@@ -63,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
 
       try {
-        const res = await fetch(`${BASE_URL}/api/auth/login`, {
+        const res = await fetch("http://localhost:3000/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
@@ -87,3 +84,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+

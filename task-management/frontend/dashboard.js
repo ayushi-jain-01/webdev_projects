@@ -1,6 +1,3 @@
-const BASE_URL = "http://localhost:3000";
-const BASE_URL = "http://localhost:3000";
-
 let editingIndex = null;
 
 const dropdownBtnNotes = document.querySelector(".dropdown-btn-notes");
@@ -84,7 +81,7 @@ function renderDashboardSummary() {
   `;
 
   // Notes count
-  fetch("http://localhost:3000/api/notes", {
+  fetch(`${BASE_URL}/api/notes`, {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
     },
@@ -149,8 +146,8 @@ document.getElementById("noteForm").addEventListener("submit", async function (e
 
   try {
     const url = editingId
-    ? `http://localhost:3000/api/notes/${editingId}`
-    : "http://localhost:3000/api/notes";
+    ? `${BASE_URL}/api/notes/${editingId}`
+    : `${BASE_URL}/api/notes`;
     const method = editingId ? 'PUT' : 'POST';
 
     const response = await fetch(url, {
@@ -196,7 +193,7 @@ async function fetchAndRenderNotes() {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/api/notes", {
+    const res = await fetch(`${BASE_URL}/api/notes`, {
       headers: {
         "Authorization": "Bearer " + token
       }
@@ -253,7 +250,7 @@ async function deleteNote(noteId) {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/api/notes/${noteId}`, {
+    const res = await fetch(`${BASE_URL}/api/notes/${noteId}`, {
       method: "DELETE",
       headers: {
         "Authorization": "Bearer " + token

@@ -29,12 +29,6 @@ A dynamic blog application that allows users to create, view, update, and delete
 - **Authentication:** JWT  
 - **Validation:** Joi
 
-### 🔹 Learning Outcomes
-- API-based frontend–backend communication
-- JWT authentication & authorization
-- CRUD operations with MongoDB
-- Structuring a full-stack project
-
 ---
 
 ## 📌 Project 2: Task Management System
@@ -53,20 +47,6 @@ A task management application to organize daily tasks with filtering, sorting, a
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB 
-
-### 🔹 Learning Outcomes
-- Task-based CRUD logic
-- Filtering and sorting algorithms
-- LocalStorage usage
-- Debugging frontend–backend integration
-
----
-
-## 🎯 Purpose of These Projects
-These projects were built to:
-- Apply theoretical knowledge into practical applications
-- Improve problem-solving and debugging skills
-- Gain hands-on experience with full-stack development
 
 ---
 
